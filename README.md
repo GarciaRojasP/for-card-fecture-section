@@ -21,12 +21,12 @@ Esto es una solución de la [Four card feature section challenge on Frontend Men
 
 ### Screenshot
 
-![]()
+![four-card-feacture](https://github.com/GarciaRojasP/for-card-fecture-section/assets/119550417/d9f6edfd-2d67-491e-b6dc-03d9aa5c2658)
 
 ### Links
 
-- Ver código: [Four card feature]()
-- Ver demo: [Four card feature]()
+- Ver código: [Four card feature](https://github.com/GarciaRojasP/for-card-fecture-section)
+- Ver demo: [Four card feature](https://for-card-fecture-section.vercel.app/)
 
 ## Mi proceso
 
