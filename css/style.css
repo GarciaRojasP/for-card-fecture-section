@@ -1,0 +1,194 @@
+:root{
+
+    /*==================== COLOR PRIMARY ====================*/
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    /*==================== COLOR NEUTRAL ====================*/
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    
+    /*==================== TYPOGRAPHY ====================*/
+    --body: 'Poppins', sans-serif;
+
+    /*==================== FONT ====================*/
+    --font-normal: 15px;
+    --font-big: 1.7rem;
+    --font-mediuBig: 1.5rem;
+
+    /*==================== FONT WEIGHT ====================*/
+    --w-extraLight: 200;
+    --w-regular: 400; 
+    --w-semibold: 600; 
+
+    /*==================== MARGING ====================*/
+    --m-normal: 1em;
+    --m-mediuRegular: 1.5em;
+
+    /*==================== PADDING ====================*/
+    --p-container: 80px;
+
+    /*==================== lINE HEIGHT ====================*/
+    --line-height: 1.5;
+
+}
+
+@media screen and (min-width:768px) {}
+    :root{
+        --font-big: 2rem;
+        --font-mediuBig: 1.7rem;
+    }
+
+/*==================== STYLE GENERAL ====================*/
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3{
+    margin:0;
+}
+
+body{
+    font-family: var(--body);
+    /*font-size: var(--font-normal);*/
+    line-height: var(--line-height);
+    font-weight: var(--w-regular);
+    background-color: var(--very-light-gray);
+}
+
+.flex{
+    display: flex;
+    gap: 1rem;
+}
+
+.grid{
+    display: grid;
+    gap: 1rem;
+}
+
+/*==================== CARD ====================*/
+.card{
+    width: 90%;
+    margin: 0 auto;
+    padding: var(--p-container) 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card__title{
+    font-size: var(--font-big);
+    font-weight: var(--w-extraLight);
+    color: var(--very-dark-blue);
+}
+
+.card__title--bold{
+    font-weight: var(--w-semibold);
+}
+
+.card__paragraph{
+    color: var(--grayish-blue);
+    margin-top: var(--m-mediuRegular);
+}
+
+/*==================== CARD CONTAINER ====================*/
+.card__container{
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: 
+    "card1"
+    "card2"
+    "card3"
+    "card4";
+  justify-items: center;
+
+  padding: 1rem;
+  text-align: left;
+  gap: 2.5em;
+}
+
+.card__item{
+    width: 90%;
+    max-width: 500px;
+    padding: 1.5em 1.7em;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px -6px hsl(212, 86%, 64%, .5);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-top: 4px solid var(--cyan);
+
+    grid-area: card1;
+}
+
+.card__item:nth-child(2){
+    grid-area: card2;
+    border-top-color: var(--red);
+}
+
+.card__item:nth-child(3){
+    grid-area: card3;
+    border-top-color: var(--orange);
+}
+
+.card__item:nth-child(4){
+    grid-area: card4;
+    border-top-color: var(--blue);
+}
+
+.card__name{
+    font-size: var(--font-mediuBig);
+    margin-top: 16px;
+    margin-bottom: 1rem;
+    font-weight: var(--w-semibold);
+}
+
+.card__copy{
+    color: var(--very-dark-blue);
+    font-weight: var(--w-extraLight);
+    padding-bottom: 40px;
+}
+
+.card__picture{
+    width: max-content;
+    margin-left: auto;
+}
+
+.card__img{
+    display: block;
+    width: 100%;
+}
+
+@media screen and (min-width:768px) {
+    /*==================== CARD CONTAINER ====================*/
+    .card__container{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        ".      card1   ."
+        "card2  card1 card3"
+        "card2  card4 card3"
+        ".      card4   .";
+    
+        gap: 1.5em 1em;
+    }
+
+    .card__item:nth-child(2){
+        margin-left: auto;
+    }
+    
+    .card__item:nth-child(3){
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .card__item{
+        width: 70%;
+        max-width: none;
+        padding: 1.5em 2.5em;
+    }
+}
